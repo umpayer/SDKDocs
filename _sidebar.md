@@ -2,8 +2,8 @@
     * [1.1集成SDK](integration/integration.md)
     * [1.2初始化配置](integration/integration.md)
 * **2.支付相关接口定义**
-    * [2.1扫码付](integration/integration.md)
-    * [2.2银行卡支付](integration/integration.md)
+    * [2.1扫码付](pay/scanpay.md)
+    * [2.2银行卡支付](pay/bankpay.md)
 * **3.支付状态查询**
     * [3.1扫码付订单状态查询](integration/integration.md)
     * [3.2银行卡订单状态查询](integration/integration.md)
