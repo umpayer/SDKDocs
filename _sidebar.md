@@ -1,5 +1,5 @@
 * **1.集成使用**
-    * [1.1集成SDK](design/protocol.md)
+    * [1.1集成SDK](integration/integration.md)
     * [1.2初始化配置](design/signature.md)
 * **2.支付相关接口定义**
     * [2.1扫码付](payguide/mini.md)
