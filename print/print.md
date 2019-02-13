@@ -1,4 +1,4 @@
-参考`demo`中的`PrintActivity`类
+**参考`demo`中的[PrintActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/PrintActivity.java)类**
 
 #### 1.打印文字
 

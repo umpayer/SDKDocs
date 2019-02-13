@@ -1,4 +1,4 @@
-交易列表查询可以参考demo中的`OrderListActivity`类
+**交易列表查询可以参考demo中的[OrderListActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/OrderListActivity.java)类**
 
 ```java
 OrderListRequest listRequest=new OrderListRequest();

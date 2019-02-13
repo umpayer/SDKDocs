@@ -1,4 +1,4 @@
-**发起预授权撤销可参考`demo`中的`CardAuthReverActivity`类**
+**发起预授权撤销可参考`demo`中的[CardAuthReverActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/CardAuthReverActivity.java)类**
 
 ```java
 AuthReversRequest request = new AuthReversRequest();

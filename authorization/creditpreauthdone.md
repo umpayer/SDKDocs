@@ -1,4 +1,4 @@
-**可参考`demo`中的`CreditPreauthDoneActivity`类**
+**可参考`demo`中的[CreditPreauthDoneActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/CreditPreauthDoneActivity.java)类**
 
 
 ```java

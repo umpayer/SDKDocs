@@ -1,5 +1,4 @@
-**非当天的做的交易想还原交易需要调用这个接口，参照`demo`中`BankRefundActivity`类
-所需要的字段都是通过支付返回的字段**
+**非当天的做的交易想还原交易需要调用这个接口，参照`demo`中[BankRefundActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/BankRefundActivity.java)类所需要的字段都是通过支付返回的字段**
 
 ```java
 RefundRequest request = new RefundRequest();

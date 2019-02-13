@@ -1,4 +1,4 @@
-**用来查询退款状态未知的情况下来查询退款是否成功，参考`demo`中的`RefundStateQueryActivity`**
+**用来查询退款状态未知的情况下来查询退款是否成功，参考`demo`中的[RefundStateQueryActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/RefundStateQueryActivity.java)**
 
 
 ```java

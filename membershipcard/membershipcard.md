@@ -1,4 +1,4 @@
-**获取会员卡号参考`MemberShipCardActivity`类**
+**获取会员卡号参考[MemberShipCardActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/MemberShipCardActivity.java)类**
 
 
 ```java

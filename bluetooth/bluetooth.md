@@ -1,4 +1,4 @@
-蓝牙连接参考`BlueToothActivity`类
+**蓝牙连接参考[BlueToothActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/BlueToothActivity.java)类**
 
 ```java
 UMPay.getInstance().connectBluetooth(request, new UMConnectBluetoothCallBack() {

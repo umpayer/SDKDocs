@@ -1,6 +1,6 @@
 **建议： 成功、失败、未知的交易数据都存在接入方的后台，如出现交易失败的情况，便于我们快速排查问题**
 
-发起预授权可参考`demo`中的`CardAuthActivity`类
+发起预授权可参考`demo`中的[CardAuthActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/CardAuthActivity.java)类
 
 ```java
 final AuthRequest authRequest = new AuthRequest();

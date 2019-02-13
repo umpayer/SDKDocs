@@ -1,4 +1,4 @@
-可参考`demo`中的`PreauthDoneActivity`类
+可参考`demo`中的[PreauthDoneActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/PreauthDoneActivity.java)类
 
 
 ```java

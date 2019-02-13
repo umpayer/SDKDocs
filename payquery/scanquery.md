@@ -1,4 +1,4 @@
-**对扫码付回调`onPayUnknown`的订单调用此方法来查询订单的最终状态，参照`demo`中的`ScanQueryActivity`类**
+**对扫码付回调`onPayUnknown`的订单调用此方法来查询订单的最终状态，参照`demo`中的[ScanQueryActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/ScanQueryActivity.java)类**
 
 
 ```java

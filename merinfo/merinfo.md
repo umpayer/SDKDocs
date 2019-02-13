@@ -1,6 +1,6 @@
 #### 1.获取商户信息
 
-获取商户信息可以参考`demo`中的`MerInfoActivity`类。
+获取商户信息可以参考`demo`中的[MerInfoActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/MerInfoActivity.java)类。
 
 ```java
 UMPay.getInstance().getMerInfo(new UMMerInfoCallBack() {
