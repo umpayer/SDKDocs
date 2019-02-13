@@ -13,24 +13,24 @@
 * **5.交易退款**
     * [5.1扫码付退款](refund/scanrefund.md)
     * [5.2银行卡退款](refund/bankrefund.md)
-* **5.撤销或退款状态查询**
-    * [5.1撤销或退款状态查询](refundquery/refundquery.md)
-* **5.预授权**
-    * [5.1预授权](integration/integration.md)
-    * [5.1预授权撤销](integration/integration.md)
-    * [5.1预授权完成（有卡）](integration/integration.md)
-    * [5.1预授权完成（无卡）](integration/integration.md)
-    * [5.1预授权完成撤销](integration/integration.md)
-    * [5.1预授权订单状态查询](integration/integration.md)
-* **5.打印小票**
-    * [5.1打印小票](integration/integration.md)
-* **5.M1卡操作**
-    * [5.1M1卡操作](integration/integration.md)
-* **5.获取商户和终端信息**
-    * [5.1获取商户和终端信息](integration/integration.md)
-* **5.获取会员卡号**
-    * [5.1获取会员卡号](integration/integration.md)
-* **5.连接蓝牙**
-    * [5.1连接蓝牙](integration/integration.md)
-* **5.交易列表查询**
-    * [5.1交易列表查询](integration/integration.md)
+* **6.撤销或退款状态查询**
+    * [6.1撤销或退款状态查询](refundquery/refundquery.md)
+* **7.预授权**
+    * [7.1预授权](authorization/cardauth.md)
+    * [7.1预授权撤销](authorization/cardauthrever.md)
+    * [7.1预授权完成（有卡）](authorization/creditpreauthdone.md)
+    * [7.1预授权完成（无卡）](authorization/preauthdone.md)
+    * [7.1预授权完成撤销](authorization/cardauthdonerever.md)
+    * [7.1预授权订单状态查询](authorization/cardauthquery.md)
+* **8.打印小票**
+    * [8打印小票](print/print.md)
+* **9.M1卡操作**
+    * [9M1卡操作](m1card/m1card.md)
+* **10.获取商户和终端信息**
+    * [10获取商户和终端信息](merinfo/merinfo.md)
+* **11.获取会员卡号**
+    * [11获取会员卡号](membershipcard/membershipcard.md)
+* **12.连接蓝牙**
+    * [12连接蓝牙](bluetooth/bluetooth.md)
+* **13.交易列表查询**
+    * [13交易列表查询](orderlist/orderlist.md)
