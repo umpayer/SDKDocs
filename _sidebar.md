@@ -1,4 +1,4 @@
-* **申请Key**
+* **0.申请Key**
     * [创建新应用](apply/createapp.md)
     * [获取应用包名](apply/getpackage.md)
     * [获取SHA1值](apply/getsha1.md)
