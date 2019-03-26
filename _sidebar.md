@@ -1,7 +1,7 @@
 * **申请Key**
     * [创建新应用](apply/createapp.md)
-    * [获取应用包名](integration/config.md)
-    * [获取SHA1值](integration/config.md)
+    * [获取应用包名](apply/getpackage.md)
+    * [获取SHA1值](apply/getsha1.md)
 * **1.集成使用**
     * [1.1集成SDK](integration/integration.md)
     * [1.2初始化配置](integration/config.md)
