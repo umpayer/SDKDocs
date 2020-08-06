@@ -2,13 +2,13 @@
 
 首先，需要声明权限
 
-```java
+```xml
 <uses-permission android:name="com.umfintech.paysdk.permission.OPERATION_HARDWARE" />
 ```
 
-然后在application标签添加申请的支付的APPID，[申请APPID方法]("../apply/createapp.html")。
+然后在application标签添加申请的支付的APPID，[申请APPID方法]("#/apply/createapp")。
 
-```java
+```xml
 <application
          android:icon="@drawable/icon"
          android:label="@string/app_name" >
