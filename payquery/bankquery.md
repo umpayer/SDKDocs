@@ -8,7 +8,7 @@ request.orderDate = orderDate.getText().toString().trim();//订单时间 格式y
 UMPay.getInstance().cardQuery(request,new UMCardPayQueryCallback(){
 	@Override
     public void onReBind(int code, String msg) {
- //2017.10.17添加，支付插件升级会造成aidl断开绑定，就会回调此方法，需要接入方按照demo重新绑定即可
+     //2017.10.17添加，支付插件升级会造成aidl断开绑定，就会回调此方法，需要接入方按照demo重新绑定即可
     }
     @Override
     public void onPaySuccess(BankCardPayResponse response) {
