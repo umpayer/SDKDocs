@@ -6,7 +6,7 @@
 <uses-permission android:name="com.umfintech.paysdk.permission.OPERATION_HARDWARE" />
 ```
 
-然后在application标签添加申请的支付的APPID，[申请APPID方法](../apply/createapp)。
+然后在application标签添加申请的支付的APPID，[申请APPID方法](apply/createapp)。
 
 ```xml
 <application
