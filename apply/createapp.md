@@ -1,8 +1,8 @@
-进入应用管理，创建一个新应用。如果您之前已经创建过应用，可直接跳过这个步骤。
+##### 1.获取appid
 
-![](https://huishangplus.github.io/SDKDocs/images/key1.png)
+联系技术或者产品获取`appid`，目前不强制`appid`合法性。
+##### 2.交易通知
+目前支持SDK交易结果回调和平台交易通知，商户入网是会配置默认的通知地址，如果要变更，需要联系对应运营人员修改通知地址。
 
-![](https://huishangplus.github.io/SDKDocs/images/key2.png)
+`注意：`因为银行卡交易会有冲正的情况，平台交易通知不能作为最终的交易结果，银行卡交易只能以SDK回调结果为准。
 
-
-![](https://huishangplus.github.io/SDKDocs/images/key3.png)

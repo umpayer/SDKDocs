@@ -1,13 +1,12 @@
 * **0.申请Key**
-    * [创建新应用](apply/createapp.md)
-    * [获取应用包名](apply/getpackage.md)
-    * [获取SHA1值](apply/getsha1.md)
+    * [获取应用appid](apply/createapp.md)
 * **1.集成使用**
     * [1.1集成SDK](integration/integration.md)
     * [1.2初始化配置](integration/config.md)
 * **2.支付相关接口定义**
     * [2.1扫码付](pay/scanpay.md)
-    * [2.2银行卡支付](pay/bankpay.md)
+    * [2.2银行卡支付模式一](pay/bankpay.md)
+    * [2.3银行卡支付模式二](pay/bankpay2.md)
 * **3.支付状态查询**
     * [3.1扫码付订单状态查询](payquery/scanquery.md)
     * [3.2银行卡订单状态查询](payquery/bankquery.md)
@@ -28,13 +27,5 @@
     * [7.1预授权订单状态查询](authorization/cardauthquery.md)
 * **8.打印小票**
     * [8打印小票](print/print.md)
-* **9.M1卡操作**
-    * [9M1卡操作](m1card/m1card.md)
-* **10.获取商户和终端信息**
-    * [10获取商户和终端信息](merinfo/merinfo.md)
-* **11.获取会员卡号**
-    * [11获取会员卡号](membershipcard/membershipcard.md)
-* **12.连接蓝牙**
-    * [12连接蓝牙](bluetooth/bluetooth.md)
-* **13.交易列表查询**
-    * [13交易列表查询](orderlist/orderlist.md)
+* **9.获取商户和终端信息**
+    * [9获取商户和终端信息](merinfo/merinfo.md)

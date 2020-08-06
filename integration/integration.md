@@ -30,12 +30,12 @@ repositories {
 
 
 ##### 4.同步gradle
-最后一步同步`gradle`，同步完成之后，在类中写入`UMPay.getInstance()`不报错就代表集成成功。
+最后一步同步`gradle`，同步完成之后，在类中写入`UMFintech.getInstance()`不报错就代表集成成功。
 
 
 
 ##### 混淆配置
 
 ```java
--keep class com.umpay.payplugin.** { *;}
+-keep class com.umfintech.paysdk.** { *;}
 ```

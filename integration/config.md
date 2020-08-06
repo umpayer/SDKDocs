@@ -3,10 +3,10 @@
 首先，需要声明权限
 
 ```java
-<uses-permission android:name="com.umpay.payplugin.permission.OPERATION_HARDWARE" />
+<uses-permission android:name="com.umfintech.paysdk.permission.OPERATION_HARDWARE" />
 ```
 
-然后在application标签添加通过魔方平台申请的支付的APPID，[申请APPID方法](http://partner.huishangplus.com/webmerser_jcs/common/APIfile.jsp "申请方法")。
+然后在application标签添加申请的支付的APPID，[申请APPID方法]("申请方法")。
 
 ```java
 <application
@@ -22,7 +22,7 @@
 ##### 2.初始化支付SDK
 
 在自己的定义的`Application`类的`onCreate()`方法中调用
-`UMPay.getInstance().init(this);`此方法就是为了获取`Application`的引用，并不会做耗时操作。
+`UMFintech.getInstance().init(this);`此方法就是为了获取`Application`的引用，并不会做耗时操作。
 
 
 ##### 3.绑定和解绑
@@ -32,7 +32,7 @@
 
 ```java
 //绑定的方法
-UMPay.getInstance().bind(this, new UMBindCallBack() {
+UMFintech.getInstance().bind(this, new UMBindCallBack() {
     @Override
     public void bindException(Exception e) {
         UMPayLog.e("绑定失败！" + e.getMessage());
@@ -52,7 +52,7 @@ UMPay.getInstance().bind(this, new UMBindCallBack() {
 ```
 ```java
 //解绑
-UMPay.getInstance().unBind();
+UMFintech.getInstance().unBind();
 ```
 
 
