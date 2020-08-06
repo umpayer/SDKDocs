@@ -20,7 +20,7 @@ repositories {
 
 `dependencies`中添加`compile(name: 'paysdk', ext: 'aar')`如下图：
 
-![](https://www.showdoc.cc/server/api/common/visitfile/sign/ff50fa31ec5a2b36814caed0a6a94f40?showdoc=.jpg)
+![](../images/gradle_dependencies.png)
 
 ##### 3.添加解析`json`依赖包
 
