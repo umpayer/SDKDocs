@@ -1,7 +1,7 @@
 ##### 1．拷贝`aar`文件
 把我们提供的`paysdk.aar`文件拷贝到`app`目录的`libs`文件夹下面，如下图：
 
-![](https://www.showdoc.cc/server/api/common/visitfile/sign/81ee6ef0b5051721c0702137b88f7623?showdoc=.jpg)
+![拷贝aar](../images/copy_aar.jpg)
 
 
 
