@@ -13,7 +13,7 @@ UMPay.getInstance().scanQuery(request, new MyQueryCallBack());
 class MyQueryCallBack implements UMScanQueryCallback {
 	@Override
     public void onReBind(int code, String msg) {
-//2017.10.17添加，支付插件升级会造成aidl断开绑定，就会回调此方法，需要接入方按照demo重新绑定即可
+        //支付插件升级会造成aidl断开绑定，就会回调此方法，需要接入方按照demo重新绑定即可
     }
     @Override
     public void onPaySuccess(ScanPayResponse response) {
@@ -43,7 +43,7 @@ class MyQueryCallBack implements UMScanQueryCallback {
 | 字段  | 类型  | 必须  | 描述  |
 | :------------ | :------------ | :------------ | :------------ |
 | orderDate  | String  | O  | 格式：yyyyMMdd例如：20180709 如果为空就查询当月交易  |
-| orderId  | String  | M  | 订单id (推荐接入方后台生成，保证自己平台唯一,最大长度32位)  |
+| orderId  | String  | M  | 订单id (推荐接入方后台生成，保证自己平台唯一,最大长度64位)  |
 | payType  | String  | M  | 支付类型 （固定值 WX、AL、YL）微信，支付宝，银联二维码  |
 | reserve  | String  | O  | 保留字段  |
 
