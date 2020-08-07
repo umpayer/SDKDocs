@@ -36,7 +36,9 @@ private UMScanPayInitiativeCallback umScanPayInitiativeCallback = new UMScanPayI
 
 ```
 
-**`ScanPayInitiativeRequest`类【请求】**
+**【请求】**
+
+**`ScanPayInitiativeRequest`**
 
 | 字段    | 类型   | 必须 | 描述                                                         |
 | ------- | ------ | ---- | ------------------------------------------------------------ |
@@ -45,14 +47,16 @@ private UMScanPayInitiativeCallback umScanPayInitiativeCallback = new UMScanPayI
 | payType | String | M    | 支付类型(WX、AL、YL分别对应：微信，支付宝，银联)             |
 | orderId | String | O    | 商户订单号。建议商户平台自己维护，  生成规则：商户平台定义：<br/>小于64位的非空字符  插件定义：yyMMddHHmmssSSS+{postusn} |
 
-**`ScanPayInitiativeResponse`类【响应】**
+**【响应】**
+
+**`ScanPayInitiativeResponse`**
 
 | 字段      | 类型   | 必须 | 描述                                           |
 | --------- | ------ | ---- | ---------------------------------------------- |
 | message   | String | M    | 响应信息                                       |
 | code      | int    | M    | 返回码                                         |
 | uPayTrace | String | O    | 支付凭证号                                     |
-| qrcodeUrl | String | O    | 收款码，通过此信息生成                         |
+| qrcodeUrl | String | O    | 收款码，通过此信息生成二维码                   |
 | payType   | String | O    | 支付类型（WX、AL、YL）微信，支付宝，银联二维码 |
 | date      | String | O    | 平台日期  格式：MMdd                           |
 | amount    | String | O    | 订单金额（单位：分）                           |
