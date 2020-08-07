@@ -1,3 +1,5 @@
+> <font color='red'>此接口已过时，不在适用</font>
+
 **对银行卡支付回调`onPayUnknown`的订单调用此方法来查询订单的最终状态，参照`demo`中的[CardPayQueryActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/CardPayQueryActivity.java)类**
 
 
