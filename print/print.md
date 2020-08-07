@@ -185,9 +185,7 @@ e.printStackTrace();
 
 ### 8.执行打印方法
 
-> 打印图片的本地地址（在本地文件中）如：/storage/emulated/0/jpg1.bmp 多张图片用：“|”分隔 如
->
-> /storage/emulated/0/jpg1.bmp| /storage/emulated/0/jpg1.bmp
+> 打印图片的本地地址（在本地文件中）如：/storage/emulated/0/jpg1.bmp 多张图片用：“|”分隔 如/storage/emulated/0/jpg1.bmp| /storage/emulated/0/jpg1.bmp
 
 
 ```java

@@ -30,4 +30,9 @@
 * **8.打印小票**
     * [8打印小票](print/print.md)
 * **9.获取商户和终端信息**
-    * [9获取商户和终端信息](merinfo/merinfo.md)
+    * [9获取商户和终端信息(暂不可用)](merinfo/merinfo.md)
+* **10.数据清除**
+    * [10.1清除POS参数](clean/cleanparam.md)
+    * [10.2清除密钥信息](clean/cleankey.md)
+* **11.查询**
+    * [11.1银行卡余额查询](query/querybalance.md)
