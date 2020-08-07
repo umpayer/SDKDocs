@@ -51,7 +51,7 @@ UMFintech.getInstance().scanRefundQuery(request, new UMScanRefundQueryCallback()
 
 **【响应】**
 
-`RefundResponse`类
+`ScanRefundQueryResponse`类
 
 | 字段  | 类型  | 必须  | 描述  |
 | ------------ | ------------ | ------------ | ------------ |

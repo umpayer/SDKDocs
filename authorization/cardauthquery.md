@@ -1,3 +1,4 @@
+<font color='red'>该接口不可用</font>
 **预授权订单状态查询请参考[CardAuthQueryActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/CardAuthQueryActivity.java)**
 
 ```java

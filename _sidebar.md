@@ -22,11 +22,11 @@
     * [6.1扫码付退款状态查询](refundquery/refundquery.md)
 * **7.预授权**
     * [7.1预授权](authorization/cardauth.md)
-    * [7.1预授权撤销](authorization/cardauthrever.md)
-    * [7.1预授权完成（有卡）](authorization/creditpreauthdone.md)
-    * [7.1预授权完成（无卡）](authorization/preauthdone.md)
-    * [7.1预授权完成撤销](authorization/cardauthdonerever.md)
-    * [7.1预授权订单状态查询](authorization/cardauthquery.md)
+    * [7.2预授权撤销](authorization/cardauthrever.md)
+    * [7.3预授权完成（有卡）](authorization/creditpreauthdone.md)
+    * [7.4预授权完成（无卡）](authorization/preauthdone.md)
+    * [7.5预授权完成撤销](authorization/cardauthdonerever.md)
+    * [7.6预授权订单状态查询(暂不可用)](authorization/cardauthquery.md)
 * **8.打印小票**
     * [8打印小票](print/print.md)
 * **9.获取商户和终端信息**

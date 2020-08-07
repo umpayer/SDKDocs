@@ -7,9 +7,9 @@ PrintUtils.setStringContent("打印测试--1", 1, 1)
 ```
 **其中使用**
 
-参数1：打印的内容
-参数2：内容显示的位置（1 居左 2 居中  3居右）
-参数3：打印内容大小（1,2,3）
+* 参数1：打印的内容
+* 参数2：内容显示的位置（1 居左 2 居中  3居右）
+* 参数3：打印内容大小（1,2,3）
 
 
 
@@ -26,7 +26,7 @@ ob.put(“spos”,array);
 **注意：**`JSONObject`中的内容中的`key`必须是`"spos"`，下面的方法同样需要。
 
 
-<br/>
+
 #### 2.打印二维码
 
 ```java
@@ -35,9 +35,9 @@ PrintUtils.setTwoDimension("www.baidu.com", 2, 6)
 
 **其中使用**
 
-参数1 ：打印的内容（二维码内容）
-参数2 ：内容显示的位置（1 居左 2 居中  3居右）
-参数3 ：打印内容大小（1-8）
+* 参数1 ：打印的内容（二维码内容）
+* 参数2 ：内容显示的位置（1 居左 2 居中  3居右）
+* 参数3 ：打印内容大小（1-8）
 
 
 
@@ -51,7 +51,10 @@ ob.put(“spos”,array);
 
 ```
 
-<br/>
+
+
+
+
 #### 3.打印一维码
 
 
@@ -61,10 +64,10 @@ PrintUtils.setOneDimension("123123123", 2, 3, 3)
 
 **其中使用**
 
-参数1 ：打印的内容（一维码内容）
-参数2 ：内容显示的位置（1 居左 2 居中  3居右）
-参数3 ：一维码高度（2或3）
-参数4 ：一维码宽度 （2或3）
+* 参数1 ：打印的内容（一维码内容）
+* 参数2 ：内容显示的位置（1 居左 2 居中  3居右）
+* 参数3 ：一维码高度（2或3）
+* 参数4 ：一维码宽度 （2或3）
 
 
 
@@ -78,14 +81,18 @@ ob.put(“spos”,array);
 
 ```
 
-<br/>
+
+
+
+
 #### 4.打印空行
 
 ```java
 PrintUtils.setfreeLine("3")
 ```
 **其中使用**
-参数1 ：打印就空行个数 例如传入“3”则打印3个空行
+
+* 参数1 ：打印就空行个数 例如传入“3”则打印3个空行
 
 
 
@@ -98,7 +105,10 @@ JSONObject ob=new JSONObject();
 ob.put(“spos”,array);
 ```
 
-<br/>
+
+
+
+
 #### 5.打印分割线
 
 ```java
@@ -114,16 +124,19 @@ JSONObject ob=new JSONObject();
 ob.put(“spos”,array);
 ```
 
-**温馨提示 打印的分割线使用的默认字体“simsun”分割线的长度和具体使用的字体 建议根据实际情况 使用打印文字的方式自己打印分割线**
+> 温馨提示: 打印的分割线使用的默认字体“simsun”分割线的长度和具体使用的字体 建议根据实际情况 使用打印文字的方式自己打印分割线
 
-<br/>
+
+
+
+
 #### 6.打印图片
 
 ```java
 PrintUtils.setbitmap(1)
 ```
 
-参数：图片显示的位置（1 偏左，2居中，3偏右）
+* 参数：图片显示的位置（1 偏左，2居中，3偏右）
 
 完整内容如下
 
@@ -133,10 +146,12 @@ array.put(PrintUtils.setbitmap(1))
 JSONObject ob=new JSONObject();
 ob.put(“spos”,array);
 ```
-**注意：打印图片的时SD卡中必须有这张图片  而且在执行打印的方法中 第二个参数要传入所要打印的图片的地址例如（/storage/emulated/0/jpg1.bmp），6.0权限需要自己应用处理**
+> 注意：打印图片的时SD卡中必须有这张图片  而且在执行打印的方法中 第二个参数要传入所要打印的图片的地址例如（/storage/emulated/0/jpg1.bmp），6.0权限需要自己应用处理
 
 
-<br/>
+
+
+
 #### 7.打印复杂的内容
 
 ```java
@@ -157,16 +172,22 @@ try {
 	jsonArray.put(PrintUtils.setStringContent("--------------------------------", 2, 1));
 	jsonArray.put(PrintUtils.setStringContent("打印测试--4", 1, 2));
 	jsonArray.put(PrintUtils.setTwoDimension("www.baidu.com",2, 6));
-	jsonArray.put(PrintUtils.setOneDimension("WWW.BAIDU.COM",2,2, 2));
+	jsonArray.put(PrintUtils.setOneDimension("WWW.BAIDU.COM",2, 2, 2));
 	jsonObject.put("spos", jsonArray);
 } catch (JSONException e) {
 e.printStackTrace();
 }
-
 ```
 
-<br/>
+
+
+
+
 ### 8.执行打印方法
+
+> 打印图片的本地地址（在本地文件中）如：/storage/emulated/0/jpg1.bmp 多张图片用：“|”分隔 如
+>
+> /storage/emulated/0/jpg1.bmp| /storage/emulated/0/jpg1.bmp
 
 
 ```java
@@ -199,9 +220,9 @@ UMPay.getInstance().print(ob.toString(), info , new BasePrintCallback() {
 
 **其中使用**
 
-参数1：上面组装的打印的JSONobject 的字符串
-参数2： 打印机配置
-参数3：aar 中提供的打印回调 （监听了 打印开始  打印结束  打印异常 ）
+* 参数1：上面组装的打印的JSONobject 的字符串
+* 参数2： 打印机配置
+* 参数3：aar 中提供的打印回调 （监听了 打印开始  打印结束  打印异常 ）
 
 
 
