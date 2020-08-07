@@ -1,4 +1,3 @@
-
 **建议：** 成功、失败、未知的交易数据都存在接入方的后台，如出现交易失败的情况，便于我们快速排查问题
 
 扫码付支持微信、支付宝、银联二维码，可以参考`demo`中的[ScanActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/ScanActivity.java)类
@@ -35,6 +34,7 @@ private UMScanPayCallback umScanPayCallback = new UMScanPayCallback() {
     public void onPayUnknown(ScanPayResponse response) {
         //支付状态未知回调（由于网络和各种异常有可能会出现这种状态),不能确定订单最终状态，推荐接入平台记录状态为未知，后续可以再次调用扫码付状态查询方法，来确定最终状态
 	    //UMFintech.getInstance().scanQuery();
+      //具体参考 Demo的ScanQueryActivity类
     }
 };
 
@@ -68,7 +68,6 @@ private UMScanPayCallback umScanPayCallback = new UMScanPayCallback() {
 | orderId  | String  | C  | 订单号  |
 | payType  | String  | C  | 支付类型（WX、AL、YL）微信，支付宝，银联二维码  |
 | payDate  | String  | C  | 支付日期 格式：yyyyMMdd  |
-| amount  | String  | C  | 订单金额（单位：分）  |
 | payAmount  | String  | C  | 实际支付金额（单位：分）  |
 | platTime  | String  | C  | 平台时间HHmmss  |
 | uPayTrace  | String  | O  | 支付凭证号  |

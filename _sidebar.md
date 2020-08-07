@@ -4,9 +4,10 @@
     * [1.1集成SDK](integration/integration.md)
     * [1.2初始化配置](integration/config.md)
 * **2.支付相关接口定义**
-    * [2.1扫码付](pay/scanpay.md)
-    * [2.2银行卡支付模式一](pay/bankpay.md)
-    * [2.3银行卡支付模式二](pay/bankpay2.md)
+    * [2.1扫码付(用户被扫)](pay/scanpay.md)
+    * [2.2扫码付(用户主扫)](pay/scanpayInitiative.md)
+    * [2.3银行卡支付模式一](pay/bankpay.md)
+    * [2.4银行卡支付模式二](pay/bankpay2.md)
 * **3.支付状态查询**
     * [3.1扫码付订单状态查询](payquery/scanquery.md)
     * [3.2银行卡订单状态查询](payquery/bankquery.md)
