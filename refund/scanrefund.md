@@ -31,7 +31,7 @@ public void onReBind(int code, String msg) {
 
     @Override
     public void onRefundUnknown(RefundResponse response) {
-        //退款位置，可以发起退款状态查询
+        //退款未知，可以发起退款状态查询
 		// UMFintech.getInstance().scanRefundQuery(request, callback);
 		//具体逻辑参考 Demo 的RefundStateQueryActivity 类
     }

@@ -19,7 +19,7 @@
     * [5.1扫码付退款](refund/scanrefund.md)
     * [5.2银行卡退款](refund/bankrefund.md)
 * **6.撤销或退款状态查询**
-    * [6.1撤销或退款状态查询](refundquery/refundquery.md)
+    * [6.1扫码付退款状态查询](refundquery/refundquery.md)
 * **7.预授权**
     * [7.1预授权](authorization/cardauth.md)
     * [7.1预授权撤销](authorization/cardauthrever.md)

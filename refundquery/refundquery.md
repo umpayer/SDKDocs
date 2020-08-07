@@ -1,40 +1,52 @@
-**用来查询退款状态未知的情况下来查询退款是否成功，参考`demo`中的[RefundStateQueryActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/RefundStateQueryActivity.java)**
+**用来查询扫码付退款状态未知的情况下来查询退款是否成功，参考`demo`中的RefundStateQueryActivity**
 
 
 ```java
-RefundQueryRequest request = new RefundQueryRequest();
-request.orderId = orderId.getText().toString().trim();
-//订单时间 格式yyyyMMdd （由于数据库做的分表，所以需要传这个字段，如果不传就查当月数据）
-request.orderDate = orderDate.getText().toString().trim();
-UMPay.getInstance().refundQuery(request,new UMRefundStateQueryCallback(){
-	@Override
-	public void onReBind(int code, String msg) {
-	 //2017.10.17添加，支付插件升级会造成aidl断开绑定，就会回调此方法，需要接入方按照demo重新绑定即可
-	}
+ScanRefundQueryRequest request = new ScanRefundQueryRequest();
+request.uPayTrace = uPayTrace.getText().toString().trim();
+request.amount = amount.getText().toString().trim();
+request.tradeNo = tradeNo.getText().toString().trim();
+request.orderDate = "0611";
+request.payType = "WX";// "AL" "YL" "WX"
+UMFintech.getInstance().scanRefundQuery(request, new UMScanRefundQueryCallback() {
     @Override
-    public void onRefundSuccess(RefundResponse response) {
-        //退款成功，订单最终状态
+    public void onRefundSuccess(ScanRefundQueryResponse response) {
+        //退款成功
     }
+
     @Override
-    public void onRefundFail(RefundResponse response) {
-        //退款失败，订单最终状态
+    public void onRefundFail(ScanRefundQueryResponse response) {
+        //退款失败
     }
+
     @Override
-    public void onQueryError(RefundResponse response) {
-        //退款未知，通过错误信息来判断是否需要继续发起退款或调用退款状态查询接口
+    public void onRefundError(ScanRefundQueryResponse response) {
+        //查询失败，还不能确定订单最终状态，可以通过错误提示是否继续发起查询
+    }
+
+    @Override
+    public void onRefundUnknown(ScanRefundQueryResponse response) {
+        //查询失败，还不能确定订单最终状态，可以通过错误提示是否继续发起查询
+    }
+
+    @Override
+    public void onReBind(int code, String msg) {
+                
     }
 });
-
 ```
 
 **【请求】**
 
-`RefundQueryRequest`类
+`ScanRefundQueryRequest`类
 
 | 字段  | 类型  | 必须  | 描述  |
 | ------------ | ------------ | ------------ | ------------ |
-| orderId  | String  | M  | 订单号  |
-| orderDate  | String  | M  | 订单时间 格式yyyyMMdd （由于数据库做的分表，所以需要传这个字段，如果不传就查当月数据）  |
+| uPayTrace | String  | M  | 凭证号 |
+| amount | String  | M  | 原交易金额 |
+| orderDate | String | M | 订单日期 （4位 格式：MMdd） |
+| payType | String | M | 支付方式 （支付宝："AL" 银联： "YL"微信： "WX"） |
+| tradeNo | String | M | 平台流水号 |
 
 
 **【响应】**
@@ -45,22 +57,15 @@ UMPay.getInstance().refundQuery(request,new UMRefundStateQueryCallback(){
 | ------------ | ------------ | ------------ | ------------ |
 | message  | String  | M  | 响应信息  |
 | code  | int  | M  | 返回码  |
-| orderId  | String  | C  | 订单id  |
-| amount  | String  | C  | 退款金额（单位：分）  |
-| tradeNo  | String  | C  | 平台处理流水  |
-| platDate  | String  | C  | 平台日期 格式：yyyyMMdd  |
-| platTime  | String  | C  | 平台时间HHmmss  |
-| uPospDate  | String  | C  | POSP日期 ,退款状态查询不会返回此此段  |
-| uPospTime  | String  |  C | POSP时间 ,退款状态查询不会返回此此段  |
-| paySeq  | String  | C  | 参考号（打印小票必要字段）  |
-| unionPayMerId  | String  | C  | 商户编号，商户在银联注册的商户号  |
-| unionPayPosId  | String  |  C | 终端编号  |
-| uMerId  | String  | C  | U付商户号  |
-| uPosId  | String  | C  | U付终端号  |
-| bankName  | String  | C  | 发卡行  |
-| account  | String  | C  | 脱敏卡号  |
-| cardExpiryDate  | String  | C  | 卡有效期  |
-| uPayTrace  | String  | C  | 凭证号  |
-| batchId  | String  | C  | 批次号  |
+| orderId  | String  | O  | 订单id  |
+| amount  | String  | O  | 退款金额（单位：分）  |
+| tradeNo  | String  | O  | 平台处理流水  |
+| platDate  | String  | O  | 平台日期 格式：yyyyMMdd  |
+| platTime  | String  | O  | 平台时间HHmmss  |
+| modDate | String  | O  | 2.0版本添加订单修改日期 |
+| modTime | String  |  O | 2.0版本添加订单修改时间 |
+| msgDesc | String  | O  | 解释口径 |
+| msgToUser | String  | O  | 错误用户提示 |
+| stateCode | String  |  O | 后台返回的状态码 |
 
 
