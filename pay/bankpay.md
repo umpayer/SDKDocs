@@ -1,12 +1,15 @@
-**建议： 成功、失败、未知的交易数据都存在接入方的后台，如出现交易失败的情况，便于我们快速排查问题**
+> 建议： 成功、失败、未知的交易数据都存在接入方的后台，如出现交易失败的情况，便于我们快速排查问题
 
 银行卡支付支持`磁条卡`、`IC卡`、`闪付卡`、`applepay`、`云闪付等`,支持两种支付模式。
-<br>      模式一：支付插件内部一次性完成读卡、用户输入密码、交易上送流程，在此过程中接入方在回调等待最终的交易结果回调即可。
-<br>      模式二：支付插件内容完成读卡，此时将读取的卡信息、刷卡方式回调接入方，同时支付插件启动120秒的倒计时，倒计时内，接入方可以通过调用continuePay方法决定后续流程(用户输入密码、交易上送)，超时后，不能继续发起后续流程，流程中使用orderId确定唯一一笔交易。
-<br>
-<br>可以参考`demo`中的[CardActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/CardActivity.java)类。
-<br>
-<font color=red>注意：为保证流程完整，插件内部会锁定支付流程，当前流程未结束，用户不能发起新的支付请求，如果在模式二中结束上一次请求，需要使用cancelCardPay()结束读卡锁定。</font>
+
+* 模式一：支付插件内部一次性完成读卡、用户输入密码、交易上送流程，在此过程中接入方在回调等待最终的交易结果回调即可。
+* 模式二：支付插件内容完成读卡，此时将读取的卡信息、刷卡方式回调接入方，同时支付插件启动120秒的倒计时，倒计时内，接入方可以通过调用continuePay方法决定后续流程(用户输入密码、交易上送)，超时后，不能继续发起后续流程，流程中使用orderId确定唯一一笔交易。
+
+
+
+可以参考`demo`中的[CardActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/CardActivity.java)类。
+
+> 注意：==为保证流程完整，插件内部会锁定支付流程，当前流程未结束，用户不能发起新的支付请求，如果在模式二中结束上一次请求，需要使用cancelCardPay()结束读卡锁定。==
 
 ```java
 BankCardPayRequest payRequest = new BankCardPayRequest();
