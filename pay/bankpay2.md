@@ -8,7 +8,7 @@
 可以参考`demo`中的[CardActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/CardActivity.java)类。
 
 
-> 注意：==为保证流程完整，插件内部会锁定支付流程，当前流程未结束，用户不能发起新的支付请求，如果在模式二中结束上一次请求，需要使用cancelCardPay()结束读卡锁定。==
+> 注意：<font color='red'>为保证流程完整，插件内部会锁定支付流程，当前流程未结束，用户不能发起新的支付请求，如果在模式二中结束上一次请求，需要使用cancelCardPay()结束读卡锁定。</font>
 
 ```java
 BankCardPayRequest payRequest = new BankCardPayRequest();
