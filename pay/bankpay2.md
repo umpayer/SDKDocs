@@ -1,8 +1,9 @@
+## **功能说明**
+
 > 建议： 成功、失败、未知的交易数据都存在接入方的后台，如出现交易失败的情况，便于我们快速排查问题
 
 银行卡支付支持`磁条卡`、`IC卡`、`闪付卡`、`applepay`、`云闪付等`,支持两种支付模式。
 
-* 模式一：支付插件内部一次性完成读卡、用户输入密码、交易上送流程，在此过程中接入方在回调等待最终的交易结果回调即可。
 * 模式二：支付插件内容完成读卡，此时将读取的卡信息、刷卡方式回调接入方，同时支付插件启动120秒的倒计时，倒计时内，接入方可以通过调用continuePay方法决定后续流程(用户输入密码、交易上送)，超时后，不能继续发起后续流程，流程中使用orderId确定唯一一笔交易。
 
 可以参考`demo`中的[CardActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/CardActivity.java)类。
@@ -10,12 +11,19 @@
 
 > 注意：<font color='red'>为保证流程完整，插件内部会锁定支付流程，当前流程未结束，用户不能发起新的支付请求，如果在模式二中结束上一次请求，需要使用cancelCardPay()结束读卡锁定。</font>
 
+## **接口说明**
+
+
+* ###  preCardPay() 获取卡信息
+
+  第一步：获取卡信息
+
 ```java
 BankCardPayRequest payRequest = new BankCardPayRequest();
 payRequest.amount = amount;//amount为int类型
-//订单id (推荐接入方后台生成，保证自己平台唯一,最大长度32位)，下方为测试所用
+//订单id (推荐接入方后台生成，保证自己平台唯一,最大长度64位)，下方为测试所用
 payRequest.orderId = "0101" + dateTimeFormat.format(new Date());
-UMFintech.getInstance().cardPay(payRequest, new UMBankCardPayCallback() {
+UMFintech.getInstance().preCardPay(payRequest, new UMBankCardPayCallback() {
 	@Override
     public void onReBind(int code, String msg) {
         //支付插件升级会造成aidl断开绑定，就会回调此方法，需要接入方按照demo重新绑定即可
@@ -42,14 +50,35 @@ UMFintech.getInstance().cardPay(payRequest, new UMBankCardPayCallback() {
         }else if(UMCardCode.START_READ_CARD ==  response.code){
             //密钥下载成功，开始刷卡！
         }else if(UMCardCode.START_READ_CARD ==  response.code){
-            //刷卡成功，请输入密码
+            //刷卡成功，刷卡成功，返回卡信息，刷卡方式，接入方自己的逻辑决定是否执行后续流程。
         }else if(UMCardCode.SEND_PAY_REQUEST ==  response.code){
             //密码输入成功，发起支付
         }
     }
 });
-
 ```
+
+* ### continuceCardPay() 继续支付
+
+  第二步:继续支付，交易结果在第一步的callback回调
+
+```java
+BankCardPayRequest payRequest = new BankCardPayRequest();
+payRequest.orderId= orderId;(订单号)
+UMFintech.getInstance().continuceCardPay(payRequest);
+```
+
+* ### cancelCardPay() 取消支付
+
+  第二步:取消支付，交易结果在第一步的callback回调
+
+```java
+BankCardPayRequest payRequest = new BankCardPayRequest();
+payRequest.orderId= orderId;(订单号)
+UMFintech.getInstance().cancelCardPay(payRequest);
+```
+
+* ### stopSearchCard() 取消读卡
 
 **注意：关闭银行卡界面一定要取消读卡**
 
@@ -65,8 +94,8 @@ UMPay.getInstance().stopSearchCard(null);
 | 字段  | 类型  | 必须  | 描述  |
 | ------------ | ------------ | ------------ | ------------ |
 | amount  | int  | M  | 金额（单位：分） |
-| orderId  | String  | M  | 订单id (推荐接入方后台生成，保证自己平台唯一,最大长度32位)  |
-| reserve  | String  | O  | 保留字段  |
+| orderId  | String  | O | 商户订单号。建议商户平台自己维护<br>生成规则：商户平台定义：小于64位的非空字符<br>插件定义：yyMMddHHmmssSSS+{postusn}<br>模式二时，使用该字段保证唯一性。 |
+| reserve  | String  | O  | 生成规则：保留字段 |
 
 
 
@@ -78,27 +107,32 @@ UMPay.getInstance().stopSearchCard(null);
 | ------------ | ------------ | ------------ | ------------ |
 | message  | String  | M  | 响应信息  |
 | code  | int  | M  | 返回码  |
-| orderId  | String  | C  | 订单id  |
-| amount  | String  | C  | 金额（单位：分）  |
-| cardPayType  | String  | C  | 银行卡类型，包括磁条卡（CT），IC卡（IC），云闪付、applepay（YS）,银行卡闪付（YSIC）  |
-| payType  | String  | C  | 银行卡类型，包括磁条卡（CT），IC卡（IC），闪付卡、云闪付、applepay（YS）  |
-| tradeNo  | String  | C  | 平台处理流水  |
-| orderDate  | String  | C  | 订单日期（退款的时候使用） 格式：yyyyMMdd  |
-| platTime  | String  | C  | 平台时间HHmmss  |
-| paySeq  | String  | C  | 参考号（打印小票必要字段）  |
+| orderId  | String  | M | 订单id,回传订单号 |
+| amount  | String  | M | 金额（单位：分）  |
+| cardPayType  | String  | C  | 银行卡类型，包括磁条卡（swipe），IC卡（ic），applepay（YS）,银行卡闪付（YSIC） |
+| payType  | String  | C  | 银行卡类型，包括磁条卡（swipe），IC卡（ic），闪付卡、云闪付、applepay（nfc） |
+| tradeNo  | String  | O  | 平台处理流水  |
+| orderDate  | String  | M | 订单日期（退款的时候使用） 格式：yyyyMMdd  |
+| platTime  | String  | M | 平台时间HHmmss  |
+| paySeq  | String  | M | 参考号（打印小票必要字段）  |
 | unionPayMerId  | String  | C  | 商户编号，商户在银联注册的商户号  |
 | unionPayPosId  | String  |  C | 终端编号  |
 | uMerId  | String  | C  | U付商户号  |
 | uPosId  | String  | C  | U付终端号  |
-| bankName  | String  | C  | 发卡行  |
-| account  | String  | C  | 脱敏卡号  |
-| cardExpiryDate  | String  | C  | 卡有效期  |
-| uPayTrace  | String  | C  | 凭证号  |
+| bankName  | String  | M | 发卡行  |
+| account  | String  | M | 脱敏卡号  |
+| uPayTrace  | String  | M | 凭证号  |
 | batchId  | String  | C  | 批次号  |
 | authCode  | String  | C  | 授权码  |
-| freeAmt  | String  | C  | 小额双免金额，0不是小额双免  |
-| freeMessage  | String  | C  | 小额双免提示语，打印小票使用，例如：交易金额未超[1000.00]元，免密免签  |
-| cardType  | String  | C  | 卡类型，00借记卡 01贷记卡  |
-
+| freeAmt  | String  | O | 小额双免金额，0不是小额双免  |
+| freeMessage  | String  | O | 小额双免提示语，打印小票使用，例如：交易金额未超[1000.00]元，免密免签  |
+| cardType  | String  | C  | 卡类型，00:借记卡 01:贷记卡 |
+| tradeMerAbbr | String  | C  | 交易商户简称，有此数据时小票打印该字段 |
+| stateCode | String  | O | 交易失败时返回，后台返回的状态码 |
+| msgToUser | String  | O | 交易失败时返回，错误用户提示 |
+| msgDesc | String  | O | 交易失败时返回，解释口径 |
+| payAction | String  | O | 1-刷卡，2-插卡，3-挥卡 |
+| transCommand | String  | O | 10-消费，11-消费撤销，16-退款 |
+| cardMedia | String  | O | 1-刷卡，2-插卡，3-挥卡 |
 
 

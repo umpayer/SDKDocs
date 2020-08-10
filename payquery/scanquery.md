@@ -7,7 +7,7 @@ request.orderId = orderId.getText().toString().trim();
 request.payType = payType;
 request.amount = Integer.parseInt(amount.getText().toString().trim());
 request.paySeq = paySeq.getText().toString().trim();
-//订单时间 格式MMdd （由于数据库做的分表，所以需要传这个字段，如果不传就差当月数据）
+//订单时间 格式MMdd （由于数据库做的分表，所以需要传这个字段，如果不传就查当月数据）
 request.orderDate = orderDate.getText().toString().trim();
 progressDialog("正在查询");
 UMFintech.getInstance().scanQuery(request, new MyQueryCallBack());

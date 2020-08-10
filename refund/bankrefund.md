@@ -83,7 +83,6 @@ public void onReBind(int code, String msg) {
 | uPosId  | String  | O  | U付终端号  |
 | bankName  | String  | O  | 发卡行  |
 | account  | String  | O  | 脱敏卡号  |
-| cardExpiryDate  | String  | O | 卡有效期  |
 | uPayTrace  | String  | O  | 凭证号  |
 | batchId  | String  | O  | 批次号  |
 | stateCode | String | O | 后台返回的状态码 |

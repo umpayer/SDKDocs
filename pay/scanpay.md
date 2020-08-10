@@ -51,7 +51,7 @@ private UMScanPayCallback umScanPayCallback = new UMScanPayCallback() {
 | goodsInfo  | String  | M  | 商品信息(不能超过6个字)  |
 | goodsDescribe  | String  | M  | 商品描述（不能超过42个字）  |
 | orderId  | String  | M  | 商户订单号 (推荐接入方后台生成，保证自己平台唯一,最大长度64位)  |
-| uPayTrace  | String  | O  | 交易凭证号，接入方上送(最大长度6位)  |
+| uPayTrace  | String  | O  | 交易凭证号，接入方上送(长度为6位) |
 | reserve  | String  | O  | 保留字段  |
 
 
