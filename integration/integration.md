@@ -24,7 +24,7 @@ repositories {
 
 ##### 3.添加解析`json`依赖包
 
-`dependencies`中添加`compile 'com.alibaba:fastjson:1.1.56.android'`
+`dependencies`中添加`compile 'com.alibaba:fastjson:1.2.48'`
 
 **注意： 如果项目当中有这个包可以忽略此步。**
 
