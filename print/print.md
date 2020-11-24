@@ -107,8 +107,6 @@ ob.put(“spos”,array);
 
 
 
-
-
 #### 5.打印分割线
 
 ```java
@@ -178,8 +176,6 @@ try {
 e.printStackTrace();
 }
 ```
-
-
 
 
 
