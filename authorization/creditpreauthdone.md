@@ -9,6 +9,7 @@ doneRequest.amount = amount;//预授权完成的金额(amount为int类型)
 doneRequest.authCode = authCode;//预授权时返回的授权码
 doneRequest.orderDate = orderDate;
 doneRequest.orderId = orderId;//商户订单号
+doneRequest.isD0 = 1; //传1不启用D0结算 不传默认启用D0
 UMFintech.getInstance().creditPreauthDone(doneRequest, new UMCreditPreauthDoneCallBack() {
   @Override
   public void onReBind(int code, String msg) {
@@ -56,6 +57,7 @@ UMFintech.getInstance().creditPreauthDone(doneRequest, new UMCreditPreauthDoneCa
 | orderId  | String  | O  | 订单id，建议商户平台自己维护，生成规则：商户平台定义：小于64位的非空字符插件定义：yyMMddHHmmssSSS+{postusn} |
 | orderDate  | String  | M  | 预授权的订单日期  |
 | authCode  | String  | M  | 预授权返回的授权码  |
+| isD0 | int | O | 是否D0清算 0：是 1：否 |
 
 
 **【响应】**

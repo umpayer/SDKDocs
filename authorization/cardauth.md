@@ -6,6 +6,7 @@
 final AuthRequest authRequest = new AuthRequest();
 authRequest.amount = 1;//根据自己的需求填写实际金额 单位 分(amount为int类型)
 authRequest.orderId = “”;//商户订单号
+authRequest.isD0 = 1; //传1不启用D0结算 不传默认启用D0
 UMFintech.getInstance().cardPreAuth(authRequest, new UMAuthPayCallBack() {
   @Override
   public void onReBind(int code, String msg) {
@@ -79,6 +80,7 @@ UMFintech.getInstance().stopSearchCard(new UMCancelCardCallback() {
 | ------------ | ------------ | ------------ | ------------ |
 | amount  | int  | M  | 金额（单位：分）  |
 | orderId  | String  | M  | 订单id (推荐接入方后台生成，保证自己平台唯一,最大长度64位)  |
+| isD0 | int | O | 是否D0清算 0：是 1：否 |
 
 
 **【响应】**
