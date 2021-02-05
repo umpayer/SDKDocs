@@ -11,7 +11,7 @@
 * **3.支付状态查询**
     * [3.1扫码付(用户被扫)订单状态查询](payquery/scanquery.md)
     * [3.2扫码付(用户主扫)订单状态查询](payquery/scanqueryinitiative)
-    * [3.3银行卡订单状态查询](payquery/bankquery.md)
+    * [3.3银行卡订单状态查询【暂不可用】](payquery/bankquery.md)
 * **4.交易撤销**
     * [4.1扫码付撤销](revoke/scanrevoke.md)
     * [4.2银行卡撤销](revoke/bankrevoke.md)
