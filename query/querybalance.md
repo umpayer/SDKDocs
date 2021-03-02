@@ -1,7 +1,8 @@
 银行卡余额查询支持磁条卡、IC卡、闪付卡、applepay、云闪付，可以参考demo中的`BalanceInquiryActivity`类
 
 ```java
-UMFintech.getInstance().balanceInquiry(new UMBalanceInquiryCallback() {
+BaseRequest request = new BaseRequest()
+UMFintech.getInstance().balanceInquiry_V2(request,new UMBalanceInquiryCallback() {
   @Override
   public void onReBind(int code, String msg) {
     cancelDialog();

@@ -10,7 +10,7 @@ doneRequest.amount = Integer.parseInt(amount); //预授权完成的金额(amount
 doneRequest.account = account; //预授权的卡号
 doneRequest.authCode = authCode; //预授权时返回的授权码
 doneRequest.orderDate = orderDate;// 预授权的订单日期
-doneRequest.cardExpiryDate = cardExpiryDate; //卡片有效期
+doneRequest.isD0 = 1; //传1不启用D0结算 不传默认启用D0
 UMFintech.getInstance().preauthDone(doneRequest, new UMPreauthDoneCallBack() {
 	@Override
     public void onReBind(int code, String msg) {
@@ -45,7 +45,7 @@ public void onPayUnknown(PreauthDoneResponse response) {
 | orderDate  | String  | M  | 预授权的订单日期  |
 | authCode  | String  | M  | 预授权返回的授权码  |
 | account | String | M | 卡号 |
-| cardExpiryDate | String | M | 卡片有效期 |
+| isD0      | int    | O    | 是否D0清算 0：是 1：否 |
 
 
 **【响应】**
@@ -71,7 +71,6 @@ public void onPayUnknown(PreauthDoneResponse response) {
 | uPosId  | String  | O | U付终端号  |
 | bankName  | String  | O | 发卡行  |
 | account  | String  | O | 明文卡号  |
-| cardExpiryDate  | String  | O | 卡有效期  |
 | uPayTrace  | String  | O | 凭证号  |
 | batchId  | String  | O | 批次号  |
 | authCode  | String  | O | 授权码  |

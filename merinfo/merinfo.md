@@ -1,6 +1,4 @@
-<font color='red'>该接口暂不可用</font>
-
-#### 1.获取商户信息
+#### 1.获取商户信息【SDK版本需要00.00.01.39】
 
 获取商户信息可以参考`demo`中的[MerInfoActivity](https://github.com/mr-yang/PayPluginDemo/blob/master/app/src/main/java/com/umpay/payplugindemo/MerInfoActivity.java)类。
 

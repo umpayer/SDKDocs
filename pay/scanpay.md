@@ -11,6 +11,7 @@ request.goodsDescribe = "商品描述商品描述";
 request.goodsInfo = "商品信息"
 //订单id (推荐接入方后台生成，保证自己平台唯一,最大长度64位)，下方为测试所用
 request.orderId = "0101" + dateTimeFormat.format(new Date());
+request.isD0 = 1; //传1不启用D0结算 不传默认启用D0
 UMFintech.getInstance().scanPay(request, umScanPayCallback);
 ```
 
@@ -53,6 +54,7 @@ private UMScanPayCallback umScanPayCallback = new UMScanPayCallback() {
 | orderId  | String  | M  | 商户订单号 (推荐接入方后台生成，保证自己平台唯一,最大长度64位)  |
 | uPayTrace  | String  | O  | 交易凭证号，接入方上送(长度为6位) |
 | reserve  | String  | O  | 保留字段  |
+| isD0 | int | O | 是否D0清算 0：是 1：否 |
 
 
 

@@ -19,6 +19,7 @@ BankCardPayRequest payRequest = new BankCardPayRequest();
 payRequest.amount = amount;//amount为int类型
 //订单id (推荐接入方后台生成，保证自己平台唯一,最大长度64位)，下方为测试所用
 payRequest.orderId = "0101" + dateTimeFormat.format(new Date());
+payRequest.isD0 = 1; //传1不启用D0结算 不传默认启用D0
 UMFintech.getInstance().cardPay(payRequest, new UMBankCardPayCallback() {
 	@Override
     public void onReBind(int code, String msg) {
@@ -72,6 +73,7 @@ UMFintech.getInstance().stopSearchCard(null);
 | amount  | int  | M  | 金额（单位：分） |
 | orderId  | String  | M  | 商户订单号。建议商户平台自己维护<br/>生成规则：商户平台定义：小于64位的非空字符<br/>插件定义：yyMMddHHmmssSSS+{postusn} |
 | reserve  | String  | O  | 保留字段  |
+| isD0 | int | O | 是否D0清算 0：是 1：否 |
 
 
 

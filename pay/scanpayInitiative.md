@@ -10,6 +10,7 @@ scanPayInitiativeRequest.amount = Integer.parseInt(amount);
 scanPayInitiativeRequest.tips = "定金"; //tips不传默认为 消费
 scanPayInitiativeRequest.payType = payType;
 scanPayInitiativeRequest.orderId = orderId;
+scanPayInitiativeRequest.isD0 = 1; //传1不启用D0结算 不传默认启用D0
 UMFintech.getInstance().scanPayInitiative(scanPayInitiativeRequest, umScanPayInitiativeCallback);
 ```
 
@@ -46,6 +47,7 @@ private UMScanPayInitiativeCallback umScanPayInitiativeCallback = new UMScanPayI
 | tips    | String | O    | 支付说明，默认为消费                                         |
 | payType | String | M    | 支付类型(WX、AL、YL分别对应：微信，支付宝，银联)             |
 | orderId | String | O    | 商户订单号。建议商户平台自己维护，  生成规则：商户平台定义：<br/>小于64位的非空字符  插件定义：yyMMddHHmmssSSS+{postusn} |
+| isD0    | int    | O    | 是否D0清算 0：是 1：否                                       |
 
 **【响应】**
 
