@@ -30,7 +30,7 @@ UMFintech.getInstance().cardPay(payRequest, new UMBankCardPayCallback() {
     }
     @Override
     public void onPayFail(BankCardPayResponse response) {
-       //支付失败回调，最终订单状态
+       //支付失败回调,需要特殊注意，如果返回码是-2，下一笔交易时会自动冲正，务必让商户在做一次收款或者余额查询。
     }
     @Override
     public void onPayUnknown(BankCardPayResponse response) {
@@ -82,7 +82,7 @@ UMFintech.getInstance().stopSearchCard(null);
 | 字段  | 类型  | 必须  | 描述  |
 | ------------ | ------------ | ------------ | ------------ |
 | message  | String  | M  | 响应信息  |
-| code  | int  | M  | 返回码  |
+| code  | int  | M  | 返回码(<font color='red'>需要特殊注意，如果返回码是-2，下一笔交易时会自动冲正，务必让商户在做一次收款或者余额查询</font>) |
 | orderId  | String  | C  | 订单id，回传订单号 |
 | amount  | String  | C  | 金额（单位：分）  |
 | cardPayType  | String  | C  | 银行卡类型，包括磁条卡（swipe），IC卡（ic），applepay（YS）,银行卡闪付（YSIC） |

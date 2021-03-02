@@ -19,7 +19,7 @@ UMFintech.getInstance().cardPreAuth(authRequest, new UMAuthPayCallBack() {
   
   @Override
   public void onAuthFail(CardAuthResponse authResponse) {
-    //预授权失败 返回明确的订单状态
+    //预授权失败 如遇到网络超时导致用户扣款成功，务必请再次发起预授权交易或者余额查询，
     
   }
   
