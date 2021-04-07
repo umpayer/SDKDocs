@@ -59,14 +59,14 @@ UMFintech.getInstance().preCardPay(payRequest, new UMBankCardPayCallback() {
 });
 ```
 
-* ### continuceCardPay() 继续支付
+* ### continucePay() 继续支付
 
   第二步:继续支付，交易结果在第一步的callback回调
 
 ```java
 BankCardPayRequest payRequest = new BankCardPayRequest();
 payRequest.orderId= orderId;(订单号)
-UMFintech.getInstance().continuceCardPay(payRequest);
+UMFintech.getInstance().continucePay(payRequest);
 ```
 
 * ### cancelCardPay() 取消支付
