@@ -36,7 +36,7 @@ UMPay.getInstance().cardQuery(request,new UMCardPayQueryCallback(){
 | ------------ | ------------ | ------------ | ------------ |
 | orderId  | String  | O | 订单号  |
 | orderDate  | String  | M  | 订单时间 格式MMdd （由于数据库做的分表，所以需要传这个字段，如果不传就查当月数据）  |
-| uPayTrace | String | M | 订单流水号（交易接口返回） |
+| uPayTrace | String | M | 凭证号（交易接口返回） |
 
 **【响应】**
 
